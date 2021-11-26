@@ -16,8 +16,8 @@
 
 ### Routes
 
-/generate-users
-:Insert users to users collection
+- /generate-users
+> Insert users to users collection
 Params
 > count : Number
 > count : Number
