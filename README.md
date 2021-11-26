@@ -20,5 +20,5 @@
 > Insert users to users collection
 
 **Params**
-> count : Number
-> count : Number
+*count : Number*
+*count : Number*
