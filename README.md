@@ -18,6 +18,7 @@
 
 - /generate-users
 > Insert users to users collection
-Params
+
+**Params**
 > count : Number
 > count : Number
