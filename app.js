@@ -12,7 +12,9 @@ global.__basedir = __dirname;
 const Configs = require('./config');
 const { start: startDb } = require('./db/mongoose');
 
-startDb(Configs.db_host + Configs.db_name);
+// console.log(process.env.DB_DSN)
+// startDb(Configs.db_host + Configs.db_name);
+startDb();
 
 
 var protocol = require('http');

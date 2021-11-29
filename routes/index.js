@@ -128,10 +128,12 @@ module.exports = (app) => {
 
 			console.log("=====================================================================")
 			console.log('Updating (Promise.all)...')
-			let start = new Date();
+			let startFetch = new Date();
 			let users = await Users.find().limit(num_users);
+			let endFetch = new Date();
 			progress.start(users.length, 0);
 
+			let startLoop = new Date();
 			await Promise.all(users.map(user => {
 				return new Promise(async (resolve, reject) => {
 					await Users.findOneAndUpdate({ _id: user._id }, { $set: { points: points } })
@@ -139,12 +141,14 @@ module.exports = (app) => {
 					resolve(true)
 				});
 			}))
+			let endLoop = new Date();
 
 			progress.stop();
 
-			let end = new Date();
-			let elapsed = (end - start) / 1000;
-			console.log(`Total Execution time: ${elapsed}s`)
+			// let elapsed = (end - start) / 1000;
+			console.log(`Fetch Execution time: ${(endFetch - startFetch) / 1000}s`)
+			console.log(`Loop Execution time: ${(endLoop - startLoop) / 1000}s`)
+			console.log(`Total Execution time: ${(endLoop - startFetch) / 1000}s`)
 
 			res.json({
 				message: 'Success',
