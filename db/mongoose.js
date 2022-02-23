@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 async function start(uri) {
-  await mongoose.connect(`${uri || process.env.DB_DSN}`);
+  await mongoose.connect(`${uri || process.env.MONGO_HOST}`);
 }
 
 async function stop() {

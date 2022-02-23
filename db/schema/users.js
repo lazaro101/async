@@ -6,7 +6,7 @@ const users_schema = new schema({
         type: String,
         required: true
     },
-    points:{
+    current_points:{
         type: Number,
         required: false,
         default: 0

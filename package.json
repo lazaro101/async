@@ -21,13 +21,16 @@
     "helmet": "^4.6.0",
     "http": "0.0.1-security",
     "kafkajs": "^1.15.0",
+    "log": "^6.3.1",
     "migrate-mongo": "^8.2.3",
     "mongoose": "^6.0.13",
     "morgan": "^1.10.0",
+    "node-fs": "^0.1.7",
     "node-gyp": "^8.4.0",
     "nodemon": "^2.0.15",
     "pug": "^3.0.2",
     "random-username-generator": "^1.0.4",
+    "redis": "^4.0.3",
     "socket.io": "^4.3.2",
     "uid-generator": "^2.0.0"
   }

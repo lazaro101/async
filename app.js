@@ -33,8 +33,8 @@ app.use(express.urlencoded({ limit: '50mb', extended: true })); // Parse URL-enc
 app.use(cors());
 app.use(morgan('dev'));
 
-require('./routes')(app);
+app.use(require('./routes'));
 
-server.listen(Configs.port, Configs.host, () => {
+server.listen(Configs.port, () => {
   	console.log(`Server started on port ${Configs.port}.`);
 });
